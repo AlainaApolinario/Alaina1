@@ -118,6 +118,20 @@ footer a {
 footer a:hover {
     color: #f4f4f4;
 }
+   courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 200px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
 </style>
 
 <header>
@@ -134,6 +148,25 @@ footer a:hover {
 
     <img src="alaina.jpg" alt="Description of the image" width="300">
     <h1>Alaina B. Apolinario</h1>
+    
+    <section id="courses">
+        <h2>My Courses</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Year Level</th>
+                    <th>Semester</th>
+                    <th>Code</th>
+                    <th>Title</th>
+                    <th>Credit</th>
+                </tr>
+            </thead>
+            <tbody id="courses-container"></tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script> 
+    
     <div class="content">
         <h2>About Me</h2>
         <p>Hi, I'm Alaina B. Apolinario, an IT student passionate about hardware and software. I specialize in assembling and disassembling laptops and phones, troubleshooting hardware issues, and working with various IT technologies. My goal is to continuously learn and contribute to innovative tech solutions..</p>
