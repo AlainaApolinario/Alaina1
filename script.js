@@ -7,10 +7,24 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.json();
         })
         .then(data => {
-            const container = document.getElementById("courses-container");
-            container.innerHTML = ""; // Clear previous data
+            console.log("Fetched data:", data); /
             
-            data.forEach(course => {
+            const courses = data.courses; 
+
+            if (!Array.isArray(courses)) {
+                throw new Error("Invalid data format: 'courses' is not an array");
+            }
+
+            const container = document.getElementById("courses-container");
+
+            if (!container) {
+                throw new Error("Element with ID 'courses-container' not found");
+            }
+
+            container.innerHTML = ""; 
+
+            
+            courses.forEach(course => {
                 const row = `
                     <tr>
                         <td>${course.year_level}</td>
@@ -22,9 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
                 container.innerHTML += row;
             });
+
+            console.log("Courses loaded successfully!");
         })
         .catch(error => {
             console.error("Error fetching courses:", error);
-            document.getElementById("courses-container").innerHTML = "<tr><td colspan='5'>Failed to load courses.</td></tr>";
+            document.getElementById("courses-container").innerHTML =
+                "<tr><td colspan='5'>Failed to load courses.</td></tr>";
         });
 });
