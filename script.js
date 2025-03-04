@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("https://raw.githubusercontent.com/AlainaApolinario/Alaina1/refs/heads/main/course.json")
+    fetch("https://raw.githubusercontent.com/AlainaApolinario/Alaina1/main/course.json")
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
