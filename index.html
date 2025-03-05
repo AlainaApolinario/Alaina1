@@ -22,6 +22,11 @@
         header {
             background: #222;
             padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         nav ul {
@@ -38,21 +43,22 @@
         }
 
         nav ul li a {
-            color: white;
+            background: white;
+            color: black;
             text-decoration: none;
             padding: 10px 15px;
             display: inline-block;
-            transition: background 0.3s;
             font-weight: bold;
             border-radius: 5px;
+            border: 2px solid black;
         }
 
         nav ul li a:hover {
-            background: #575757;
+            background: #ddd;
         }
 
         section {
-            padding: 50px;
+            padding: 80px 20px;
             text-align: center;
             min-height: 50vh;
         }
@@ -72,6 +78,11 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        /* Space for fixed navbar */
+        body {
+            padding-top: 60px;
+        }
     </style>
 </head>
 <body>
@@ -87,9 +98,6 @@
         </ul>
     </nav>
 </header>
-
-<img src="alaina.jpg" alt="Alaina B. Apolinario" width="200">
-<h1>Alaina B. Apolinario</h1>
 
 <!-- About Me Section -->
 <section id="about">
